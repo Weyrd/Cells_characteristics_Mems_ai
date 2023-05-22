@@ -3,16 +3,22 @@
   display: flex;
   flex-wrap: wrap;
   min-height: 80vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
+
+}
+
+.inputImage{
+  visibility: hidden;
 }
 
 .dropzone {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 1%;
   width: 98%;
   height: 98%;
+  font-size:xx-large ;
   border: 2px dashed #ccc;
   text-align: center;
   line-height: 20vw;
@@ -27,17 +33,15 @@
 .blink::before {
   content: "";
   position: absolute;
-  top: 0px;
-  left: 0px;
-  right: -10px;
-  bottom: -10px;
-  padding-right: 30px;
-  padding-bottom: 20px;
+  top: 0;
+  left: 1%;
+  width: 100%;
+  height: 100%;
   border: 3px solid transparent;
   border-radius: inherit;
   box-shadow: 0 0 0 0 transparent;
   animation: aura 2s infinite alternate;
-  width: 97%;
+
 }
 
 @keyframes aura {

@@ -1,7 +1,7 @@
 <div class="container" (dragover)="onDragOverContainer($event)">
-  <input type="file" (change)="onFileChange($event)">
+  <input type="file" class="inputImage" (change)="onFileChange($event)">
   <div class="item" *ngFor="let image of images" [style.background-image]="'url(' + image + ')'" draggable="true" (dragstart)="onDragStart($event, image)"></div>
   <div class="dropzone"  [ngClass]="{'blink': isFileDragging}" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
-    Drop Zone
+    Drop your image here
   </div>
 </div>
