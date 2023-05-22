@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-drag-and-drop',
@@ -6,13 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./drag-and-drop.component.css']
 })
 export class DragAndDropComponent {
-  images: string[] = []; // Array to store image URLs
+  images: any[] = [];
   isFileOverContainer: boolean = false;
   isFileDragging: boolean = false;
 
-  onDragStart(event: DragEvent, image: string): void {
-    event.dataTransfer?.setData('text/plain', image);
-  }
 
   onDragOverContainer(event: DragEvent): void {
     event.preventDefault();
@@ -25,6 +22,7 @@ export class DragAndDropComponent {
     event.stopPropagation();
     this.isFileDragging = true;
   }
+
   onDragLeave(event: DragEvent): void {
     event.preventDefault();
     event.stopPropagation();
@@ -41,30 +39,41 @@ export class DragAndDropComponent {
 
 
     const files = event.dataTransfer?.files;
-    if (files && files.length > 0) {
-      const file = files[0];
-      this.readFile(file);
-
+    const filesList: File[] = [];
+    if (files) {
+      for (let i = 0; i < files.length; i++) {
+        filesList.push(files[i]);
+      }
+      this.readFile(filesList);
+      console.log("afeter ", this.images)
     }
   }
 
-  onFileChange(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    const files = target.files;
-    if (files && files.length > 0) {
-      const file = files[0];
-      this.readFile(file);
-    }
+
+  private readFile(files: File[]): void {
+    files.forEach((file: File) => {
+      const reader = new FileReader();
+
+      reader.onload = (e: ProgressEvent<FileReader>) => {
+        const imageUrl = e.target?.result as string;
+
+        const img = new Image();
+        img.onload = () => {
+          const imageSize = {
+            width: img.width,
+            height: img.height
+          };
+
+          this.images.push({"url": imageUrl, "size": imageSize});
+        };
+        img.src = imageUrl;
+        console.log("images1ss", this.images)
+
+      };
+      reader.readAsDataURL(file);
+
+    });
+
   }
 
-  private readFile(file: File): void {
-    const reader = new FileReader();
-    reader.onload = (e: ProgressEvent<FileReader>) => {
-      const imageUrl = e.target?.result as string;
-      this.images.push(imageUrl);
-    };
-    reader.readAsDataURL(file);
-  }
-
-  // Rest of your component code
 }
