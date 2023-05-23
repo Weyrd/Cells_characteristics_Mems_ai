@@ -62,9 +62,8 @@
 </div>
 
 <!-- if ImagesHandlerService.images have less than 1 images show <app-drag-and-drop></app-drag-and-drop>, else show a succes div-->
-<div *ngIf="ImagesHandlerService.imagesUploaded.length < 1">
-  <app-drag-and-drop></app-drag-and-drop>
-</div>
+<app-drag-and-drop *ngIf="ImagesHandlerService.imagesUploaded.length < 1"></app-drag-and-drop>
+
 <div *ngIf="ImagesHandlerService.imagesUploaded.length > 0">
   <!-- for each images show the image {size: { width: 1846, height: 4000 } url: "data:image/jpeg;base64} -->
   <div *ngFor="let image of ImagesHandlerService.imagesUploaded">
