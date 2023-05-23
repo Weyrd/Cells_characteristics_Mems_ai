@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ImagesHandlerService} from '../shared/images-handler.service';
 
 @Component({
   selector: 'app-drag-and-drop',
@@ -6,7 +7,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./drag-and-drop.component.css']
 })
 export class DragAndDropComponent {
-  images: any[] = [];
   isFileOverContainer: boolean = false;
   isFileDragging: boolean = false;
 
@@ -45,7 +45,9 @@ export class DragAndDropComponent {
         filesList.push(files[i]);
       }
       this.readFile(filesList);
-      console.log("afeter ", this.images)
+
+      console.log("Number image upload : ", ImagesHandlerService.imagesUploaded.length, "\nList :", ImagesHandlerService.imagesUploaded)
+
     }
   }
 
@@ -64,10 +66,9 @@ export class DragAndDropComponent {
             height: img.height
           };
 
-          this.images.push({"url": imageUrl, "size": imageSize});
+          ImagesHandlerService.imagesUploaded.push({"url": imageUrl, "size": imageSize});
         };
         img.src = imageUrl;
-        console.log("images1ss", this.images)
 
       };
       reader.readAsDataURL(file);
