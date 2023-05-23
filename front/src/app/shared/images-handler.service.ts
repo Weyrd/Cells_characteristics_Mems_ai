@@ -9,5 +9,9 @@ export class ImagesHandlerService {
   constructor() {
   }
 
+  static addImage(image: any): void {
+    ImagesHandlerService.imagesUploaded.push(image);
+  }
+
 
 }

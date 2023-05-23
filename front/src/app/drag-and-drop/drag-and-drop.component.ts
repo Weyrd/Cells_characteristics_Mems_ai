@@ -65,8 +65,9 @@ export class DragAndDropComponent {
             width: img.width,
             height: img.height
           };
+          let image = {"url": imageUrl, "size": imageSize}
+          ImagesHandlerService.addImage(image);
 
-          ImagesHandlerService.imagesUploaded.push({"url": imageUrl, "size": imageSize});
         };
         img.src = imageUrl;
 

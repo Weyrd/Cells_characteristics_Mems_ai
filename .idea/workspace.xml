@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="16226365-2cd0-4528-acb4-55949b79c55b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/app/drag-and-drop/drag-and-drop.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/drag-and-drop/drag-and-drop.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/app/drag-and-drop/drag-and-drop.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/drag-and-drop/drag-and-drop.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/images-handler.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/shared/images-handler.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
       <updated>1684473333605</updated>
       <workItem from="1684473334781" duration="2806000" />
       <workItem from="1684717300255" duration="17060000" />
-      <workItem from="1684814827205" duration="1469000" />
+      <workItem from="1684814827205" duration="2527000" />
     </task>
     <servers />
   </component>
