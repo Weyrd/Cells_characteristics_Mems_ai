@@ -12,6 +12,7 @@ import {DragAndDropComponent} from "./drag-and-drop/drag-and-drop.component";
 export class AppComponent {
   title = 'front';
   protected readonly ImagesHandlerService = ImagesHandlerService;
+  message = "BONJOUR FRANCE"
 
 }
 

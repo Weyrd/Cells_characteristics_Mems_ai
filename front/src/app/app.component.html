@@ -61,6 +61,9 @@
 
 </div>
 
+<!-- send the data "bonjour" to the component visualisateur angular-->
+<app-visualisateur [message]="message"></app-visualisateur>
+
 <!-- if ImagesHandlerService.images have less than 1 images show <app-drag-and-drop></app-drag-and-drop>, else show a succes div-->
 <app-drag-and-drop *ngIf="ImagesHandlerService.imagesUploaded.length < 1"></app-drag-and-drop>
 
@@ -70,23 +73,14 @@
     <img [src]="image.url" [width]="image.size.width" [height]="image.size.height" id="uploadedImage" alt="image">
   </div>
 
+
+
+
   <!-- Create a graph and a lorem ipsum text -->
   <div id="graph">
   </div>
-  <div id="lorem">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet libero sed quam tempor, euismod quam id,
-      ultricies nisi. Phasellus euismod, lectus vitae faucibus ultrices, diam erat ultricies tortor, vitae
-      ullamcorper enim ex nec nulla. Curabitur mi neque, blandit nec gravida eu, viverra sed ex. Praesent
-      ullamcorper, magna sit amet aliquet ultricies, nulla quam consequat nibh, at fermentum dui risus quis
-      lectus. Nulla facilisi. Nulla facilisi. Sed auctor nibh et sapien pulvinar, non sagittis tortor rutrum.
-      Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec malesuada
-      enim ut risus vestibulum, ac varius nisi ullamcorper. Nunc sit amet mi id purus dapibus scelerisque. Nam
-      imperdiet, sem eu blandit scelerisque, dolor nunc porttitor est, sed interdum massa nisl sit amet leo.
-      Aliquam erat volutpat. Nullam aliquet, nisl sed imperdiet dapibus, quam felis lobortis mi, nec semper
-      turpis purus id risus. Cras id nisl quis dolor sagittis egestas. Duis rhoncus, nisi sit amet bibendum
-      pharetra, elit elit mollis felis, vel vehicula nulla lorem sit amet lectus. Sed euismod, quam ut
-      ullamcorper pulvinar, metus nisi ornare nibh, sed tincidunt odio urna a tellus.</p>
-  </div>
+
+
 
 </div>
 
