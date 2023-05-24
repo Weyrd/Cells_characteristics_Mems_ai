@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ImagesHandlerService} from './shared/images-handler.service';
+import {Component} from '@angular/core';
 import * as d3 from 'd3';
-import {DragAndDropComponent} from "./drag-and-drop/drag-and-drop.component";
+import {VisualisateurComponent} from "./visualisateur/visualisateur.component";
 
 @Component({
   selector: 'app-root',
@@ -10,9 +9,11 @@ import {DragAndDropComponent} from "./drag-and-drop/drag-and-drop.component";
 })
 
 export class AppComponent {
-  title = 'front';
-  protected readonly ImagesHandlerService = ImagesHandlerService;
-  message = "BONJOUR FRANCE"
+  title = 'Mems IA';
 
+
+  resetSite(): void {
+    VisualisateurComponent.prototype.resetImages();
+  }
 }
 

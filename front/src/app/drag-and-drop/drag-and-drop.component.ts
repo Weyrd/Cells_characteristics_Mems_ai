@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {ImagesHandlerService} from '../shared/images-handler.service';
+import {Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-drag-and-drop',
@@ -7,6 +6,8 @@ import {ImagesHandlerService} from '../shared/images-handler.service';
   styleUrls: ['./drag-and-drop.component.css']
 })
 export class DragAndDropComponent {
+  @Output() addImage = new EventEmitter<any>();
+
   isFileOverContainer: boolean = false;
   isFileDragging: boolean = false;
 
@@ -45,9 +46,6 @@ export class DragAndDropComponent {
         filesList.push(files[i]);
       }
       this.readFile(filesList);
-
-      console.log("Number image upload : ", ImagesHandlerService.imagesUploaded.length, "\nList :", ImagesHandlerService.imagesUploaded)
-
     }
   }
 
@@ -66,7 +64,8 @@ export class DragAndDropComponent {
             height: img.height
           };
           let image = {"url": imageUrl, "size": imageSize}
-          ImagesHandlerService.addImage(image);
+          this.addImage.emit(image);
+          console.log("image", image)
 
         };
         img.src = imageUrl;
