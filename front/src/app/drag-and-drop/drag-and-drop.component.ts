@@ -6,7 +6,7 @@ import {Component, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./drag-and-drop.component.css']
 })
 export class DragAndDropComponent {
-  @Output() addImage = new EventEmitter<any>();
+  @Output() addImageEvent = new EventEmitter<any>();
 
   isFileOverContainer: boolean = false;
   isFileDragging: boolean = false;
@@ -64,7 +64,7 @@ export class DragAndDropComponent {
             height: img.height
           };
           let image = {"url": imageUrl, "size": imageSize}
-          this.addImage.emit(image);
+          this.addImageEvent.emit(image);
           console.log("image", image)
 
         };

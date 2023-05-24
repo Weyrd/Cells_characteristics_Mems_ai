@@ -1,5 +1,8 @@
-<app-drag-and-drop *ngIf="!getLentListImages()"></app-drag-and-drop>
+<app-drag-and-drop (addImageEvent)="addImage($event)" *ngIf="!getIfImagesUploaded()"></app-drag-and-drop>
 
-<div *ngIf="getLentListImages()">
-  Lorem ipsum
+<div *ngIf="getIfImagesUploaded()">
+  <!--show image-->
+  <div *ngFor="let image of getImagesUploaded()">
+    <img [src]="image.url" alt="image">
+  </div>
 </div>

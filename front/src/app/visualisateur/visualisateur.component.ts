@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-visualisateur',
@@ -6,25 +6,30 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./visualisateur.component.css']
 })
 export class VisualisateurComponent {
-  private imagesUploaded: any[] = [];
+  @Input() private imagesUploaded: object[] = [];
 
   @Input()
   addImage(image: any): void {
     this.imagesUploaded.push(image);
   }
 
-  // get length() return true or false if more than 1
-  getLentListImages(): number {
+  getIfImagesUploaded(): number {
     let isImage = 0
-    if (this.imagesUploaded.length > 1) {
+    if (this.imagesUploaded.length >= 1) {
       isImage = 1;
+    } else {
+
+      isImage = 0;
     }
-    isImage = 0;
-    console.log("Il y a :", isImage);
     return isImage;
   }
 
-  resetImages(): void {
+  getImagesUploaded(): any[] {
+    return this.imagesUploaded;
+  }
+
+  @Output()
+  resetImages() {
     this.imagesUploaded = [];
   }
 

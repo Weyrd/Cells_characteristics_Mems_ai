@@ -1,6 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import * as d3 from 'd3';
-import {VisualisateurComponent} from "./visualisateur/visualisateur.component";
 
 @Component({
   selector: 'app-root',
@@ -9,11 +8,10 @@ import {VisualisateurComponent} from "./visualisateur/visualisateur.component";
 })
 
 export class AppComponent {
-  title = 'Mems IA';
+  title = 'Mems AI';
 
-
-  resetSite(): void {
-    VisualisateurComponent.prototype.resetImages();
-  }
+  /* idunno($event: any) {
+     console.log($event)
+   }*/
 }
 
