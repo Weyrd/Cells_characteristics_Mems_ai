@@ -65,7 +65,6 @@ export class DragAndDropComponent {
           };
           let image = {"url": imageUrl, "size": imageSize}
           this.addImageEvent.emit(image);
-          console.log("image", image)
 
         };
         img.src = imageUrl;

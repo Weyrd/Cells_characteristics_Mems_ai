@@ -6,11 +6,13 @@ import {Component, Input, Output} from '@angular/core';
   styleUrls: ['./visualisateur.component.css']
 })
 export class VisualisateurComponent {
-  @Input() private imagesUploaded: object[] = [];
+  private imagesUploaded: object[] = [];
+  @Input() title: string = "";
 
   @Input()
   addImage(image: any): void {
     this.imagesUploaded.push(image);
+    console.log("[--] Image added")
   }
 
   getIfImagesUploaded(): number {
@@ -30,6 +32,7 @@ export class VisualisateurComponent {
 
   @Output()
   resetImages() {
+    console.log("[--] Reset images")
     this.imagesUploaded = [];
   }
 
