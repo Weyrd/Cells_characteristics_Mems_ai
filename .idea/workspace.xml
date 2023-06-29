@@ -44,12 +44,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Weyrd\\Documents\\Github\\Cells_characteristics_Mems_ai\\front\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -76,11 +77,29 @@
       <workItem from="1684890469737" duration="13749000" />
       <workItem from="1685075083420" duration="649000" />
       <workItem from="1685429340782" duration="994000" />
-      <workItem from="1685496496373" duration="300000" />
+      <workItem from="1685496496373" duration="1146000" />
+      <workItem from="1685499560759" duration="283000" />
+      <workItem from="1685499855684" duration="2078000" />
+      <workItem from="1685508104752" duration="3740000" />
+      <workItem from="1685582540939" duration="665000" />
+      <workItem from="1685670411990" duration="1340000" />
+      <workItem from="1686028089110" duration="1342000" />
+      <workItem from="1686199038418" duration="942000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
