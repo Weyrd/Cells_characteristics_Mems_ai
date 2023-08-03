@@ -24,7 +24,7 @@ for sample in all_samples:
         #skip sample
         continue
 
-    print(f"number of rows {number_of_rows}")
+    print(f"Cell {sample['Sample_number'].unique()[0]}:number of rows {number_of_rows}")
     nb_update = math.ceil(max_time /number_of_rows)
     sample_number = sample['Sample_number'].unique()[0]
 
@@ -38,30 +38,26 @@ for sample in all_samples:
                 if column == 'Time':
                     continue
                 try:
-                    # if time last 5% of time
-                    if time > max_time - max_time * 0.00:
-                        # random vlaue between 1375 and 1524
-                        mean_value = np.random.randint(1375, 1524)
-                    else: 
-                        current_time_percentage = math.ceil(number_of_rows * time / max_time)
-                        if current_time_percentage == 0:
-                            current_time_percentage = 1
-                        
-                        #take mean of previous 3 and next value 3
-                        previous_values = []
-                        next_values = []
-                        for i in range(3):
-                            previous_values.append(sample[column].iloc[current_time_percentage - i])
-                            next_values.append(sample[column].iloc[current_time_percentage + i])
-                        mean_previous = sum(previous_values) / len(previous_values)
-                        mean_next = sum(next_values) / len(next_values)
-                        mean_value = (mean_previous + mean_next) / 2
+
+                    current_time_percentage = math.ceil(number_of_rows * time / max_time)
+                    if current_time_percentage == 0:
+                        current_time_percentage = 1
+                    
+                    #take mean of previous 3 and next value 3
+                    previous_values = []
+                    next_values = []
+                    for i in range(3):
+                        previous_values.append(sample[column].iloc[current_time_percentage - i])
+                        next_values.append(sample[column].iloc[current_time_percentage + i])
+                    mean_previous = sum(previous_values) / len(previous_values)
+                    mean_next = sum(next_values) / len(next_values)
+                    mean_value = (mean_previous + mean_next) / 2
 
 
-                        # previous_value = sample[column].iloc[current_time_percentage - 1]
-                        # current_value = sample[column].iloc[current_time_percentage]
-                        # mean_value = (previous_value + current_value) / 2
-                        # # print(f"mean value {mean_value} ")
+                    # previous_value = sample[column].iloc[current_time_percentage - 1]
+                    # current_value = sample[column].iloc[current_time_percentage]
+                    # mean_value = (previous_value + current_value) / 2
+                    # # print(f"mean value {mean_value} ")
                     new_row.append(mean_value)
                 
                 except Exception as e:

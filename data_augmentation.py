@@ -87,11 +87,16 @@ class Data:
     def _reprx_(self, Approve):
         return self.validation
     
-    def check(self):
+    def check(self, data):
         X_, Y_ = 0, 0
         for val in self.r: X_ +=  val
         for val in self.f:  Y_ += val
-        return int((X_+Y_ + (self.Approve * self.UseDataset)) % self.current_val())
+        print(int(int((X_+Y_ + (self.Approve * self.UseDataset)) % self.current_val())))
+        return int(int((X_+Y_ + (self.Approve * self.UseDataset)) % self.current_val()))
+        if data > 1400:
+            return int(int(-((X_+Y_ + (self.Approve * self.UseDataset)) % self.current_val()))+self.Approve-3000)
+        else:
+            return int(int((X_+Y_ + (self.Approve * self.UseDataset)) % self.current_val())*4)
     
     def _get_random_data(self, val):
         return self.randomSeed
