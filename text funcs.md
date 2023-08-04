@@ -19,7 +19,6 @@ To gain a deeper understanding of the relationships, further analysis and modeli
 
 
 
-
 Best Polynomial Degree: 5
 Best Mean Squared Error: 8.105907323112785e-05
 
